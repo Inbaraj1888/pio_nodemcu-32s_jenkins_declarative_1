@@ -33,7 +33,7 @@ void setup() {
     UNITY_BEGIN();    // IMPORTANT LINE!
     RUN_TEST(test_led_builtin_pin_number);
 
-    pinMode(ledPin, OUTPUT);
+    pinMode(LED_BUILTIN, OUTPUT);
 }
 
 uint8_t i = 0;
