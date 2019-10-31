@@ -16,8 +16,7 @@ pipeline
 			steps
 			{
 			sh label: '', script: '''
-			platformio test -e nodemcu-32s --verbose
-                	platformio run -t upload'''
+			platformio test -e nodemcu-32s --verbose'''
 			}
 		}
 	}
