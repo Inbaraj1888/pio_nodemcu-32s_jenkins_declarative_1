@@ -17,6 +17,9 @@ pipeline
 			{
 			sh label: '', script: '''
 			platformio run'''
+			sh 'mkdir archive'
+                	sh 'echo test > archive/test.txt'
+                	zip zipFile: '.pio.zip', archive: false, dir: 'archive'
 			}
 		}
 		stage('ZipBuild')
