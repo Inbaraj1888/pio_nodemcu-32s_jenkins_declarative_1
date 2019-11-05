@@ -29,12 +29,10 @@ pipeline
 		{
 			steps
 			{
-				script {
-					fileOperations([
-					fileZipOperations(
-						folderPath: '${WORKSPACE}/.pio/build')
-					])
-				}
+				sh label: '', script: '''fileOperations([
+                        fileZipOperations(folderPath: \'${WORKSPACE}/.pio/build\')
+			])
+'''
 			}
 		}
 	}
