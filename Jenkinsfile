@@ -17,6 +17,24 @@ pipeline
 			{
 			sh label: '', script: '''
 			platformio run'''
+				script {
+					fileOperations([
+					fileZipOperations(
+						folderPath: '${WORKSPACE}/.pio/build')
+					])
+				}
+			}
+		}
+		stage('ZipBuild')
+		{
+			steps
+			{
+				script {
+					fileOperations([
+					fileZipOperations(
+						folderPath: '${WORKSPACE}/.pio/build')
+					])
+				}
 			}
 		}
 	}
