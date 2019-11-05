@@ -25,6 +25,7 @@ pipeline
 			{
 			sh label: '', script: '''
 			platformio test -e nodemcu-32s --verbose'''
+			}
 		}
 		stage('Flash')
 		{
@@ -32,6 +33,7 @@ pipeline
 			{
 			sh label: '', script: '''
 			platformio run -t upload'''
+			}
 		}
 	}
 }
