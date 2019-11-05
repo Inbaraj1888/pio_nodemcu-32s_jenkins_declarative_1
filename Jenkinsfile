@@ -17,6 +17,7 @@ pipeline
 			{
 			sh label: '', script: '''
 			platformio run'''
+			}
 
 		}
 		stage('test')
