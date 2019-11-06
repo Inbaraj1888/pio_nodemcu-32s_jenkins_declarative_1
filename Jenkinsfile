@@ -21,6 +21,22 @@ pipeline
 			}
 
 		}
+		stage('test')
+		{
+			steps
+			{
+			sh label: '', script: '''
+			platformio test -e nodemcu-32s --verbose'''
+			}
+		}
+		stage('Flash')
+		{
+			steps
+			{
+			sh label: '', script: '''
+			platformio run -t upload'''
+			}
+		}
 		stage('Upload')
 		{
 			steps
@@ -36,22 +52,6 @@ pipeline
 					]
 					}'''
 				)
-			}
-		}
-		stage('test')
-		{
-			steps
-			{
-			sh label: '', script: '''
-			platformio test -e nodemcu-32s --verbose'''
-			}
-		}
-		stage('Flash')
-		{
-			steps
-			{
-			sh label: '', script: '''
-			platformio run -t upload'''
 			}
 		}
 		
