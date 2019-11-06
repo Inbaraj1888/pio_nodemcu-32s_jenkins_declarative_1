@@ -17,8 +17,8 @@ pipeline
 			{
 			sh label: '', script: '''
 			platformio run'''
-			}
 			fileOperations([fileZipOperation('.pio')])
+			}
 
 		}
 		stage('Upload')
