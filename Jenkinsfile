@@ -30,7 +30,7 @@ pipeline
 					"files": [
 						{
 						"pattern": "${WORKSPACE}/.pio/build",
-						"target": "example-repo-local"
+						"target": "ext-release-local"
 						}
 					]
 					}'''
