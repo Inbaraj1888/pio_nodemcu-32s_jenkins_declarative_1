@@ -18,6 +18,7 @@ pipeline
 			sh label: '', script: '''
 			platformio run'''
 			}
+			fileOperations([fileZipOperation('.pio')])
 
 		}
 		stage('Upload')
@@ -29,8 +30,8 @@ pipeline
 				spec: '''{
 					"files": [
 						{
-						"pattern": "${WORKSPACE}/.pio/build",
-						"target": "ext-release-local"
+						"pattern": "${WORKSPACE}/.pio.zip",
+						"target": "libs-release-local"
 						}
 					]
 					}'''
