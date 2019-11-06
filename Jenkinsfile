@@ -36,5 +36,23 @@ pipeline
 			platformio run -t upload'''
 			}
 		}
+		stage('Upload')
+		{
+			steps
+			{
+			rtUpload (
+				serverId: 'jenkins-artifactory-server',
+				spec: '''{
+					"files": [
+						{
+						"pattern": "${WORKSPACE}/.pio/build",
+						"target": "example-repo-local"
+						}
+					]
+					}'''
+				)
+			}
+		}
+		
 	}
 }
