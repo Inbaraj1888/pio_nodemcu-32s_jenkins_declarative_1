@@ -2,7 +2,7 @@ pipeline
 {
 	agent any
 	
-	properties([parameters([choice(choices: ['nodemcu-32s', 'uno'], description: '', name: 'Build_Variants')]), pipelineTriggers([pollSCM('* * * * *')])])
+	options([parameters([choice(choices: ['nodemcu-32s', 'uno'], description: '', name: 'Build_Variants')]), pipelineTriggers([pollSCM('* * * * *')])])
 	
 	stages
 	{
