@@ -1,9 +1,6 @@
 pipeline
 {
 	agent any
-	parameters{
-		choice(choices: ['nodemcu-32s', 'uno'], description: '', name: 'Build_Variants')
-	}
 	stages
 	{
 		stage('Checkout')
