@@ -2,7 +2,7 @@ pipeline
 {
 	agent any
 	
-	options([[$class: 'JiraProjectProperty'], parameters([choice(choices: ['nodemcu-32s', 'uno'], description: '', name: 'Build_Variants')]), pipelineTriggers([pollSCM('* * * * *')])])
+	properties([parameters([choice(choices: ['nodemcu-32s', 'uno'], description: '', name: 'Build_Variants')]), pipelineTriggers([pollSCM('* * * * *')])])
 	
 	stages
 	{
