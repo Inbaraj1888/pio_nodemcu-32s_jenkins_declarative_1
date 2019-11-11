@@ -1,7 +1,9 @@
 pipeline
 {
 	agent any
-		
+	parameters{
+		choice(choices: ['nodemcu-32s', 'uno'], description: '', name: 'Build_Variants')
+	}
 	stages
 	{
 		stage('Checkout')
@@ -16,7 +18,7 @@ pipeline
 		{
 			steps
 			{
-			options([parameters([choice(choices: ['nodemcu-32s', 'uno'], description: '', name: 'Build_Variants')]), pipelineTriggers([pollSCM('* * * * *')])])
+				
 			sh label: '', script: '''
 			platformio run'''
 			fileOperations([fileZipOperation('.pio')])
