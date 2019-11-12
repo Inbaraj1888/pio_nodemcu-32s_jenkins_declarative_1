@@ -5,19 +5,19 @@
  */
 #include "Arduino.h"
 
-int ledPin = 2;
+//int ledPin = 2;
 
 void setup()
 {
   // initialize LED digital pin as an output.
-  pinMode(ledPin, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(115200);
 }
 
 void loop()
 {
   // turn the LED on (HIGH is the voltage level)
-  digitalWrite(ledPin, HIGH);
+  digitalWrite(LED_BUILTIN, HIGH);
   // wait for a second
   delay(1000);
   // turn the LED off by making the voltage LOW
