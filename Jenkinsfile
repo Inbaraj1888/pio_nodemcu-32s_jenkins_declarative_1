@@ -1,7 +1,6 @@
 pipeline
 {
 	agent any
-	# Get the last tag name
 	tag=$(git describe --exact-match)
 	echo "$tag"
 	stages
