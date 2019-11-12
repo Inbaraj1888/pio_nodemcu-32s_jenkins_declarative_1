@@ -1,3 +1,5 @@
+@Library('jenkins-library@master')
+
 pipeline
 {
 	agent any
