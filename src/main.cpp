@@ -5,7 +5,7 @@
  */
 #include "Arduino.h"
 
-//int ledPin = 2;
+//int ledPin =2;
 
 void setup()
 {
