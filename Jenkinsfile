@@ -9,6 +9,7 @@ pipeline
 		{
 			steps
 			{
+				cleanWs()
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Github_Credentials', url: 'https://github.com/Inbaraj1888/pio_nodemcu-32s_jenkins_declarative_1.git']]])
 			}
 		}
@@ -28,6 +29,7 @@ pipeline
 			steps
 			{
 			sh label: '', script: '''
+			sudo chmod 666 /dev/ttyUSB0
 			platformio test -e nodemcu-32s --verbose'''
 			}
 		}
