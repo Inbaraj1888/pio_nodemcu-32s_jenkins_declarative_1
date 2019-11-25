@@ -11,7 +11,7 @@ pipeline
 			{
 				cleanWs()
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Github_Credentials', url: 'https://github.com/Inbaraj1888/pio_nodemcu-32s_jenkins_declarative_1.git']]])
-				)
+				
 			}
 		}
 		stage('Building')
