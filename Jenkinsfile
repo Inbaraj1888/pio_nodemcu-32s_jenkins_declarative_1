@@ -29,7 +29,6 @@ pipeline
 			steps
 			{
 			sh label: '', script: '''
-			sudo chmod 666 /dev/ttyUSB0
 			platformio test -e nodemcu-32s --verbose'''
 			}
 		}
