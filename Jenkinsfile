@@ -32,14 +32,14 @@ pipeline
 		{
 			steps
 			{
-			sh label: '', script: '''
-			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
-			{
-                    		cd src
-				shellcheck main.cpp
-				cd ..
-                	}
-			'''
+				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
+				{
+					sh label: '', script: '''
+					cd src
+					shellcheck main.cpp
+					cd ..
+					'''
+				}
 			}
 		}
 		stage('test')
