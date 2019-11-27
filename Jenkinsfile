@@ -28,6 +28,14 @@ pipeline
 			}
 
 		}
+		stage('Static Analysis')
+		{
+			steps
+			{
+			sh label: '', script: '''
+			platformio check'''
+			}
+		}
 		stage('test')
 		{
 			steps
