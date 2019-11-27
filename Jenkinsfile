@@ -35,7 +35,11 @@ pipeline
 			sh label: '', script: '''
 			cd src
 			shellcheck main.cpp
-			cd ..'''
+			cd ..
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh "exit 1"
+                }
+			'''
 			}
 		}
 		stage('test')
