@@ -33,7 +33,9 @@ pipeline
 			steps
 			{
 			sh label: '', script: '''
-			platformio check'''
+			cd src
+			shellcheck main.cpp
+			cd ..'''
 			}
 		}
 		stage('test')
